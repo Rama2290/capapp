@@ -1,7 +1,7 @@
 namespace sap.ui.capapp;
 using { managed } from '@sap/cds/common';
 
-  entity Employees : managed {
+  entity Employees  : managed {
     key ID          : UUID  @(Core.Computed : true);
     name            : String(100);
     department      : String(100);
@@ -11,10 +11,10 @@ using { managed } from '@sap/cds/common';
     directReport    : String(100);
     startDate       : Date;
     email           : String(100);
-    skill_id         : Association to many Skills_Employees on skill_id.employee = $self;
+    skills          : Association to Skills2Employees on skills.employee = $self;
   }
 
-  entity Skills : managed {
+  entity Skills  : managed {
     key ID       : UUID  @(Core.Computed : true);
     skill        : String;
     type         : String;
@@ -22,11 +22,12 @@ using { managed } from '@sap/cds/common';
     dateAcquired : Date;
     renewal      : String;
     comfortLevel : Integer;
-    employee_id     : Association to many Skills_Employees on employee_id.skill = $self;
+    employees    : Association to many Skills2Employees on employees.skill = $self;
   }
 
-  entity Skills_Employees {
-      skill : Association to Skills;
-      employee : Association to Employees;
+  entity Skills2Employees : managed {
+    key ID      : UUID @(Core.Computed : true);
+    key skill : Association to Skills;
+    key employee : Association to Employees;
   }
 
