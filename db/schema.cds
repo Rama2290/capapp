@@ -11,7 +11,7 @@ using { managed } from '@sap/cds/common';
     directReport    : String(100);
     startDate       : Date;
     email           : String(100);
-    // skills          : Association to many Skills_Employees on skills.employee = $self;
+    skill_id         : Association to many Skills_Employees on skill_id.employee = $self;
   }
 
   entity Skills : managed {
@@ -22,10 +22,11 @@ using { managed } from '@sap/cds/common';
     dateAcquired : Date;
     renewal      : String;
     comfortLevel : Integer;
-    // employee     : Association to many Skills_Employees on employee.skill = $self;
+    employee_id     : Association to many Skills_Employees on employee_id.skill = $self;
   }
 
-//   entity Skills_Employees {
-//       skill : Association to Skills;
-//       employee : Association to Employees;
-//   }
+  entity Skills_Employees {
+      skill : Association to Skills;
+      employee : Association to Employees;
+  }
+
