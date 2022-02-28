@@ -1,3 +1,5 @@
 ID;skill_id;employee_id;dateAcquired;renewal;comfortLevel
 0;0;1;1/1/01;n/a;90
 1;1;0;2/2/02;Every 2 years;50
+2;0;0;2/2/14;Every 4 years;100
+
