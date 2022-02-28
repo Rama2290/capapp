@@ -19,15 +19,15 @@ using { managed } from '@sap/cds/common';
     skill        : String;
     type         : String;
     institution  : String;
-    dateAcquired : Date;
-    renewal      : String;
-    comfortLevel : Integer;
     employees    : Association to many Skills2Employees on employees.skill = $self;
   }
 
   entity Skills2Employees : managed {
     key ID      : UUID @(Core.Computed : true);
-    key skill : Association to Skills;
-    key employee : Association to Employees;
+    skill       : Association to Skills;
+    employee    : Association to Employees;
+    dateAcquired : Date;
+    renewal      : String;
+    comfortLevel : Integer;
   }
 
