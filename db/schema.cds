@@ -2,7 +2,7 @@ namespace sap.ui.capapp;
 using { managed } from '@sap/cds/common';
 
   entity Employees  : managed {
-    key ID          : UUID  @(Core.Computed : true);
+    key ID          : Integer;
     name            : String(100);
     department      : String(100);
     title           : String(100);
@@ -15,7 +15,7 @@ using { managed } from '@sap/cds/common';
   }
 
   entity Skills  : managed {
-    key ID       : UUID  @(Core.Computed : true);
+    key ID       : Integer;
     skill        : String;
     type         : String;
     institution  : String;
