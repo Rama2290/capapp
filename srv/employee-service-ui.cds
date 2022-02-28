@@ -41,9 +41,10 @@ annotate service.Employees with @(
         }
     ],
     UI.FieldGroup #Main : {Data : [
-        {Value : ID},
         {Value : title},
-        {Value : email}
+        {Value : email},
+        {Value : startDate},
+        {Value : industry}
     ]}
 );
 
