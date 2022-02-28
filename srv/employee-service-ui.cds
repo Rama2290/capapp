@@ -25,6 +25,7 @@ annotate service.Employees with @(
         },
         Description    : {
             $Type : 'UI.DataField',
+            Label : 'Department',
             Value : department
         }
     },
