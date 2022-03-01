@@ -23,7 +23,7 @@ using { managed } from '@sap/cds/common';
   }
 
   entity Skills2Employees : managed {
-    key ID      : UUID @(Core.Computed : true);
+    key ID      : Integer;
     skill       : Association to Skills;
     employee    : Association to Employees;
     dateAcquired : Date;
