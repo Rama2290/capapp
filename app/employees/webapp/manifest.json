@@ -24,7 +24,7 @@
             "id": "ui5template.fiorielements.v4.lrop",
             "version": "1.0.0"
         }
-    },  
+    },
     "sap.ui": {
         "technology": "UI5",
         "icons": {
@@ -85,11 +85,11 @@
                     "name": "EmployeesObjectPage",
                     "target": "EmployeesObjectPage"
                 },
-                    {
-                        "pattern": "Employees({key})/skills({key2}):?query:",
-                        "name": "Skills2EmployeesObjectPage",
-                        "target": "Skills2EmployeesObjectPage"
-                    }
+                {
+                    "pattern": "Employees({key})/skills({key2}):?query:",
+                    "name": "Skills2EmployeesObjectPage",
+                    "target": "Skills2EmployeesObjectPage"
+                }
             ],
             "targets": {
                 "EmployeesList": {
@@ -98,6 +98,7 @@
                     "name": "sap.fe.templates.ListReport",
                     "options": {
                         "settings": {
+                            "editableHeaderContent": true,
                             "entitySet": "Employees",
                             "variantManagement": "Page",
                             "navigation": {
@@ -116,29 +117,29 @@
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings": {
-                            "editableHeaderContent": false,
+                            "editableHeaderContent": true,
                             "entitySet": "Employees",
-                                "navigation": {
-                                    "skills": {
-                                        "detail": {
-                                            "route": "Skills2EmployeesObjectPage"
-                                        }
+                            "navigation": {
+                                "skills": {
+                                    "detail": {
+                                        "route": "Skills2EmployeesObjectPage"
                                     }
                                 }
-                        }
-                    }
-                },
-                    "Skills2EmployeesObjectPage": {
-                        "type": "Component",
-                        "id": "Skills2EmployeesObjectPage",
-                        "name": "sap.fe.templates.ObjectPage",
-                        "options": {
-                            "settings": {
-                                "editableHeaderContent": false,
-                                "entitySet": "Skills2Employees"
                             }
                         }
                     }
+                },
+                "Skills2EmployeesObjectPage": {
+                    "type": "Component",
+                    "id": "Skills2EmployeesObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "entitySet": "Skills2Employees"
+                        }
+                    }
+                }
             }
         },
         "contentDensities": {
