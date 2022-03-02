@@ -5,17 +5,21 @@ annotate service.Employees with @(
         {
             $Type : 'UI.DataField',
             Value : name,
-            Label : 'Name'
+            Label : 'Name',
+            ![@UI.Importance] : #High
+
         },
         {
             $Type : 'UI.DataField',
             Value : department,
-            Label : 'Department'
+            Label : 'Department',
+            ![@UI.Importance] : #High
         },
         {
             $Type : 'UI.DataField',
             Value : title,
-            Label : 'Title'
+            Label : 'Title',
+            ![@UI.Importance] : #High
         },
     ],
     UI.HeaderInfo              : {
@@ -24,12 +28,14 @@ annotate service.Employees with @(
         Title          : {
             $Type : 'UI.DataField',
             Value : name,
-            Label : 'name'
+            Label : 'name',
+            ![@UI.Importance] : #High
         },
         Description    : {
             $Type : 'UI.DataField',
             Value : department,
-            Label : 'Department'
+            Label : 'Department',
+            ![@UI.Importance] : #High
         }
     },
     UI.Facets                  : [
@@ -82,43 +88,53 @@ annotate service.Skills2Employees with @(
         {
             $Type : 'UI.DataField',
             Value : skill.skill,
-            Label : 'Skill'
+            Label : 'Skill',
+            ![@UI.Importance] : #High,
+            ![@Common.FieldControl] : #ReadOnly
         },
         {
             $Type : 'UI.DataField',
             Value : skill.institution,
-            Label : 'Institution'
+            Label : 'Institution',
+            ![@UI.Importance] : #High,
+            ![@Common.FieldControl] : #ReadOnly
         },
         {
             $Type : 'UI.DataField',
             Value : skill.type,
-            Label : 'Type'
+            Label : 'Type',
+            ![@UI.Importance] : #High,
+            ![@Common.FieldControl] : #ReadOnly
         },
         {
             $Type : 'UI.DataField',
-            Value : dateAcquired,
-            Label : 'Date Acquired'
+            Value :  dateAcquired,
+            Label : 'Date Acquired',
+            ![@UI.Importance] : #High
         },
         {
             $Type : 'UI.DataField',
             Value : comfortLevel,
-            Label : 'Comfort Level'
+            Label : 'Comfort Level',
+            ![@UI.Importance] : #High
         },
         {
             $Type : 'UI.DataField',
             Value : renewal,
-            Label : 'Renewal Status'
+            Label : 'Renewal Status',
+            ![@UI.Importance] : #High
         },
         {
             $Type : 'UI.DataField',
             Value : renewal,
-            Label : 'Renewal Status'
+            Label : 'Renewal Status',
+            ![@UI.Importance] : #High
         },
     ],
-    UI.HeaderInfo                   : {
-        TypeName       : 'Skill',
-        TypeNamePlural : 'Skill',
-        Title          : {
+    UI.HeaderInfo : {
+                TypeName       : 'Skill',
+                TypeNamePlural : 'Skill',
+                Title          : {
             $Type : 'UI.DataField',
             Value : skill.skill
         },
@@ -127,22 +143,26 @@ annotate service.Skills2Employees with @(
             Value : dateAcquired
         }
     },
-    UI.Facets                       : [{
-        $Type  : 'UI.ReferenceFacet',
-        Label  : 'General Information',
-        Target : '@UI.FieldGroup#Detail'
-    }, ],
-    UI.FieldGroup #Detail           : {Data : [
+    UI.Facets: [
+        { $Type  : 'UI.ReferenceFacet',Label  : 'General Information',Target : '@UI.FieldGroup#Detail'},
+        ],
+    UI.FieldGroup#Detail           : {Data : [
         {   Value : skill.skill,
-            Label : 'Skill' 
+            Label : 'Skill',
+            ![@Common.FieldControl] : #ReadOnly
+
         },
         {
             Value : skill.institution,
-            Label : 'Institution'
+            Label : 'Institution',
+            ![@Common.FieldControl] : #ReadOnly
+
         },
         {
             Value : skill.type,
-            Label : 'Type of Skill'
+            Label : 'Type of Skill',
+            ![@Common.FieldControl] : #ReadOnly
+
         },
         {
             Value : comfortLevel,
