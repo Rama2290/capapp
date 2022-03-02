@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "cds run",
-    "watch-employees": "cds watch --open employees/webapp/index.html#fe-lrop-v4"
+    "watch-employees": "cds watch --open employees/webapp/index.html#fe-lrop-v4",
+    "watch-capm-freestyle": "cds watch --open capm-freestyle/webapp/index.html#fe-lrop-v4"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
