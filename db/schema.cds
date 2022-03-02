@@ -1,33 +1,34 @@
 namespace sap.ui.capapp;
-using { managed } from '@sap/cds/common';
 
-  entity Employees  : managed {
-    key ID          : Integer;
-    name            : String(100);
-    department      : String(100);
-    title           : String(100);
-    role            : String(100);
-    industry        : String(100);
-    directReport    : String(100);
-    startDate       : Date;
-    email           : String(100);
-    skills          : Association to Skills2Employees on skills.employee = $self;
-  }
+using {managed} from '@sap/cds/common';
 
-  entity Skills  : managed {
-    key ID       : Integer;
-    skill        : String;
-    type         : String;
-    institution  : String;
-    employees    : Association to many Skills2Employees on employees.skill = $self;
-  }
+entity Employees : managed {
+  key ID           : UUID @(Core.Computed);
+      name         : String(100);
+      department   : String(100);
+      title        : String(100);
+      role         : String(100);
+      industry     : String(100);
+      directReport : String(100);
+      startDate    : Date;
+      email        : String(100);
+      skills       : Association to Skills2Employees on skills.employee = $self;
+}
 
-  entity Skills2Employees : managed {
-    key ID      : Integer;
-    skill       : Association to Skills;
-    employee    : Association to Employees;
-    dateAcquired : Date;
-    renewal      : String;
-    comfortLevel : Integer;
-  }
 
+entity Skills : managed {
+  key ID          : UUID @(Core.Computed);
+      skill       : String;
+      type        : String;
+      institution : String;
+      employees   : Association to many Skills2Employees on employees.skill = $self;
+}
+
+entity Skills2Employees : managed {
+  key ID           : UUID @(Core.Computed);
+      skill        : Association to one Skills;
+      employee     : Association to one Employees;
+      dateAcquired : Date;
+      renewal      : String;
+      comfortLevel : Integer;
+}
