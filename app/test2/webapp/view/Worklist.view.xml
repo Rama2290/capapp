@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="capmfreestyle.controller.Worklist"
+    controllerName="test2.controller.Worklist"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:semantic="sap.f.semantic">
@@ -67,7 +67,7 @@
                         press=".onPress">
                         <cells>
                             <ObjectIdentifier
-                                title="{name}"/>
+                                title="{ID}"/>
                             <ObjectNumber />
                         </cells>
                     </ColumnListItem>
