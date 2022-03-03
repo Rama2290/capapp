@@ -5,12 +5,6 @@
     xmlns="sap.m"
 >
     <Shell id="shell">
-        <App id="app">
-            <pages>
-                <Page id="page" title="{i18n>title}">
-                    <content />
-                </Page>
-            </pages>
-        </App>
+        <App id="app"/>  
     </Shell>
 </mvc:View>
