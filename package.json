@@ -17,7 +17,8 @@
     "start": "cds run",
     "watch-employees": "cds watch --open employees/webapp/index.html#fe-lrop-v4",
     "watch-capm-freestyle": "cds watch --open capm-freestyle/webapp/index.html#fe-lrop-v4",
-    "watch-test2": "cds watch --open test2/webapp/index.html#fe-lrop-v4"
+    "watch-test2": "cds watch --open test2/webapp/index.html#fe-lrop-v4",
+    "watch-freestyle-capm": "cds watch --open freestyle-capm/webapp/index.html#fe-lrop-v4"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
