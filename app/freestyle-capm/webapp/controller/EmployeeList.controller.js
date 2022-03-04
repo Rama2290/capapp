@@ -5,7 +5,7 @@ sap.ui.define([
 ], function (Controller, Fragment) {
     "use strict";
 
-    return Controller.extend("freestyle.capm.controller.EmployeeList", {
+    return Controller.extend("freestylecapm.controller.EmployeeList", {
         onInit: function () {
         },
         addEmployee: function () {
@@ -60,12 +60,13 @@ sap.ui.define([
 
         
 //NAVIGATION 
+
             onPress: function (oEvent) {
                 var oItem = oEvent.getSource();
                 var oRouter = this.getOwnerComponent().getRouter();
                 console.log('Click');
                 oRouter.navTo("detail", {
-                    employeePath: window.encodeURIComponent((oItem.getBindingContext("employee").getProperty("id")))
+                    employeePath: window.encodeURIComponent((oItem.getBindingContext().getProperty("id")))
                 });
             }
 
