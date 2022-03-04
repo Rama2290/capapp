@@ -8,7 +8,7 @@
         autoPopinMode="true"
         contextualWidth="Auto"
         growing="true"
-        items="{employee>/Employees}">			
+        items="{/Employees}">			
                 
         <headerToolbar>
             <Toolbar>
@@ -38,10 +38,10 @@
                 press=".onPress"
                 type="Navigation"> 
                 <cells>
-                    <ObjectIdentifier title="{employee>fullName}" text="{employee>role}"/>
-                        <Text text="{employee>department}"/>
-                        <Text text="{employee>industries}"/>
-                        <Text text="{employee>startDate}"/>
+                    <ObjectIdentifier title="{name}" text="{role}"/>
+                        <Text text="{department}"/>
+                        <Text text="{industries}"/>
+                        <Text text="{startDate}"/>
                 </cells>
             </ColumnListItem>
         </items>
