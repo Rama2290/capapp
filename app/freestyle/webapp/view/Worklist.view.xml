@@ -67,7 +67,7 @@
                         press=".onPress">
                         <cells>
                             <ObjectIdentifier
-                                title="{ID}"/>
+                                title="{name}"/>
                             <ObjectNumber />
                         </cells>
                     </ColumnListItem>

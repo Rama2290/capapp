@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="freestyle-capm.controller.Employees"
+    controllerName="freestyle.capm.controller.Employees"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
@@ -10,7 +10,7 @@
         </headerContent>
 
         <content> 
-            <mvc:XMLView viewName="freestyle-capm.view.EmployeeList"/>
+            <mvc:XMLView viewName="freestyle.capm.view.EmployeeList"/>
         </content>
     </Page>
 </mvc:View>

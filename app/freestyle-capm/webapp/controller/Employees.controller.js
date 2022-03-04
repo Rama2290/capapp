@@ -4,7 +4,7 @@ sap.ui.define([
     function (Controller) {
         "use strict";
 
-        return Controller.extend("freestyle.freestylecapm.controller.Employees", {
+        return Controller.extend("freestyle.capm.controller.Employees", {
             onInit: function () {
 
             }

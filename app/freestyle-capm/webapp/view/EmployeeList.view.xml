@@ -1,5 +1,5 @@
 <mvc:View
-   controllerName="freestyle-capm.controller.employeeList"
+   controllerName="freestyle.capm.controller.employeeList"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
 
@@ -40,7 +40,7 @@
                 <cells>
                     <ObjectIdentifier title="{name}" text="{role}"/>
                         <Text text="{department}"/>
-                        <Text text="{industries}"/>
+                        <Text text="{industry}"/>
                         <Text text="{startDate}"/>
                 </cells>
             </ColumnListItem>

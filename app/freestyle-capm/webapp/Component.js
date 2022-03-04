@@ -1,12 +1,12 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "freestyle/freestylecapm/model/models"
+        "freestyle/capm/model/models"
     ],
     function (UIComponent, Device, models) {
         "use strict";
 
-        return UIComponent.extend("freestyle.freestylecapm.Component", {
+        return UIComponent.extend("freestyle.capm.Component", {
             metadata: {
                 manifest: "json"
             },

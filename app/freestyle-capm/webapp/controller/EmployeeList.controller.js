@@ -5,7 +5,7 @@ sap.ui.define([
 ], function (Controller, Fragment) {
     "use strict";
 
-    return Controller.extend("freestyle-capm.controller.EmployeeList", {
+    return Controller.extend("freestyle.capm.controller.EmployeeList", {
         onInit: function () {
         },
         addEmployee: function () {

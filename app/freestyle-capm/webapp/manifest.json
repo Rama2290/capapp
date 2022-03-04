@@ -1,7 +1,7 @@
 {
   "_version": "1.32.0",
   "sap.app": {
-    "id": "freestyle.freestylecapm",
+    "id": "freestyle.capm",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -53,7 +53,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "freestyle.freestylecapm.i18n.i18n"
+          "bundleName": "freestyle.capm.i18n.i18n"
         }
       },
       "": {
@@ -80,32 +80,41 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "freestyle.freestylecapm.view",
+        "viewPath": "freestyle.capm.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "RouteEmployees",
-          "pattern": "RouteEmployees",
+          "name": "Overview",
+          "pattern": "",
           "target": [
-            "TargetEmployees"
+            "overview"
           ]
+        },
+        {
+          "name":"detail",
+          "pattern":"detail/{employeePath}",
+          "target":"detail"
         }
       ],
       "targets": {
-        "TargetEmployees": {
+        "overview": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "Employees",
-          "viewName": "Employees"
+          "viewId": "Overview",
+          "viewName": "Overview"
+        },
+        "detail":{
+          "viewId": "Details",
+          "viewName":"Details"
         }
       }
     },
     "rootView": {
-      "viewName": "freestyle.freestylecapm.view.Employees",
+      "viewName": "freestyle.capm.view.Employees",
       "type": "XML",
       "async": true,
       "id": "Employees"
