@@ -34,7 +34,6 @@ xmlns:mvc="sap.ui.core.mvc" >
 				text="Delete Employee" 
 				icon="sap-icon://delete" 
 				press="DeleteEmployee"/>          
-        
 		</headerContent>
 		<content>
 
@@ -48,23 +47,63 @@ xmlns:mvc="sap.ui.core.mvc" >
 				backgroundDesign="Solid">
 				<attributes>
 					<ObjectAttribute title="Email" text="{email}" />
-
 					<ObjectAttribute title="Role" text="{role}" />
 					<ObjectAttribute title="Industry" text="{industry}" />
 					<ObjectAttribute title="Direct Report" text="{directReport}" />
 					<ObjectAttribute title="Start Date" text="{startDate}" />
-
-					
-
 				</attributes>
 			</ObjectHeader>
 
 			<ScrollContainer height="100%" width="100%"	vertical="true">
-				<f:GridContainer
+<Table 
+        id="skillsTable"
+        autoPopinMode="true"
+        contextualWidth="Auto"
+        growing="true"
+        items="{skills}">			
+                
+        <headerToolbar>
+            <Toolbar>
+                <Title text="skill"/>
+                <ToolbarSpacer/>      
+                <Button width="150px" id="CreateBtn" icon="sap-icon://add" press="addEmployee" text="Add Employee"/>            
+            </Toolbar>
+        </headerToolbar>
+
+        <columns>
+            <Column width="12rem">
+                <Text text="Name"/>
+            </Column>
+            <Column width="12rem">
+                <Text text="Department"/>
+            </Column>
+            <Column width="12rem">
+                <Text text="Industry"/>
+            </Column>
+            <Column width="12rem">
+                <Text text="Start Date"/>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem 
+                vAlign="Middle"
+                press=".onPress"
+                type="Navigation"> 
+                <cells>
+                    <ObjectIdentifier title="{dateAcquired}" text="{dateAcquired}"/>
+                        <Text text="{dateAcquired}"/>
+                        <Text text="{dateAcquired}"/>
+                        <Text text="{dateAcquired}"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+
+				<!-- <f:GridContainer
 					id="grid1"
 					class="sapUiSmallMargin"
 					snapToRow="true"
-					items="{assignedSkills}">
+					items="{skills}">
 					<f:layout>
 						<f:GridContainerSettings rowSize="80px" columnSize="80px" gap="18px" />
 					</f:layout>
@@ -74,8 +113,8 @@ xmlns:mvc="sap.ui.core.mvc" >
 
 					<f:items >
 					<GenericTile 
-						header="{skill}" 
-						subheader="{type}">
+						header="{skill/skill}" 
+						subheader="{skill/type}">
 						<layoutData>
 							<f:GridContainerItemLayoutData minRows="2" columns="2" />
 						</layoutData>
@@ -94,7 +133,7 @@ xmlns:mvc="sap.ui.core.mvc" >
 						</TileContent>
 					</GenericTile>
 					</f:items>		
-				</f:GridContainer>
+				</f:GridContainer> -->
 			</ScrollContainer>
 		</content>
 	</Page>
