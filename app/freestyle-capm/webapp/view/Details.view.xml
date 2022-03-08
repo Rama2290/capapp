@@ -18,25 +18,10 @@ xmlns:mvc="sap.ui.core.mvc" >
 		navButtonPress=".onNavBack"
 		icon = "sap-icon://add-favorite">
 		<headerContent>
-			<Button 
-				id="skillButton" 
-				icon="sap-icon://add-favorite" 
-				tooltip="Add Skills" 
-				text="Add Employee Skillz" 
-				press= "addSkill"/>
-			<Button 
-				id="editEmployeeButton" 
-				icon="sap-icon://edit" 
-				text="Edit Employee" 
-				press="EditEmployee"/>   
-			<Button 
-				id="DeleteEmployeeBtn" 
-				text="Delete Employee" 
-				icon="sap-icon://delete" 
-				press="DeleteEmployee"/>          
+			<Button id="editEmployeeButton" icon="sap-icon://edit" text="Edit Employee" press="EditEmployee"/>   
+			<Button id="DeleteEmployeeBtn"  icon="sap-icon://delete" text="Delete Employee" press="DeleteEmployee"/>          
 		</headerContent>
 		<content>
-
 			<ObjectHeader
 				icon="test-resources/sap/m/images/Woman_04.png"
 				iconDensityAware="false"
@@ -55,49 +40,48 @@ xmlns:mvc="sap.ui.core.mvc" >
 			</ObjectHeader>
 
 			<ScrollContainer height="100%" width="100%"	vertical="true">
-<Table 
-        id="skillsTable"
-        autoPopinMode="true"
-        contextualWidth="Auto"
-        growing="true"
-        items="{skills}">			
-                
-        <headerToolbar>
-            <Toolbar>
-                <Title text="skill"/>
-                <ToolbarSpacer/>      
-                <Button width="150px" id="CreateBtn" icon="sap-icon://add" press="addEmployee" text="Add Employee"/>            
-            </Toolbar>
-        </headerToolbar>
-
-        <columns>
-            <Column width="12rem">
-                <Text text="Name"/>
-            </Column>
-            <Column width="12rem">
-                <Text text="Department"/>
-            </Column>
-            <Column width="12rem">
-                <Text text="Industry"/>
-            </Column>
-            <Column width="12rem">
-                <Text text="Start Date"/>
-            </Column>
-        </columns>
-        <items>
-            <ColumnListItem 
-                vAlign="Middle"
-                press=".onPress"
-                type="Navigation"> 
-                <cells>
-                    <ObjectIdentifier title="{dateAcquired}" text="{dateAcquired}"/>
-                        <Text text="{dateAcquired}"/>
-                        <Text text="{dateAcquired}"/>
-                        <Text text="{dateAcquired}"/>
-                </cells>
-            </ColumnListItem>
-        </items>
-    </Table>
+			<Table 
+				id="skillsTable"
+				autoPopinMode="true"
+				contextualWidth="Auto"
+				growing="true"
+				items="{skills}">							
+			<headerToolbar>
+				<Toolbar>
+					<Title text="{i18n>skillTableHeader}"/>
+					<ToolbarSpacer/>      
+						<Button id="skillButton" icon="sap-icon://add-favorite" tooltip="Add Skills" text="Add Employee Skillz" press= "addSkill"/>            
+				</Toolbar>
+			</headerToolbar>
+					<columns>
+						<Column width="12rem">
+							<Text text="Name"/>
+						</Column>
+						<Column width="12rem">
+							<Text text="Comfort Level"/>
+						</Column>
+						<Column width="12rem">
+							<Text text="Date Acquired"/>
+						</Column>
+						<Column width="12rem">
+							<Text text="Renewal"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem 
+							vAlign="Middle"
+							press=".onPress"
+							type="Navigation"> 
+							<cells>
+								<ObjectIdentifier title="dateAcquired" text="dateAcquired"/>
+									<Text text="{dateAcquired}"/>
+									<Text text="{dateAcquired}"/>
+									<Text text="{dateAcquired}"/>
+									<Text text="{dateAcquired}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
 
 				<!-- <f:GridContainer
 					id="grid1"
