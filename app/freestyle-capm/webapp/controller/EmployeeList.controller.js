@@ -9,66 +9,44 @@ sap.ui.define([
         onInit: function () {
         },
         addEmployee: function () {
-            if (!this.pDialog) {
-                this.pDialog = this.loadFragment({
-                    name: "freestyle-capm.view.AddEmployeeDialog"
+            //   console.log('clicked Add Employee')
+            var employeeList = this.byId("idEmployeeTable"),
+                employeeBinding = employeeList.getBinding("items"),
+                oContext = employeeBinding.create({
+                    "name": "name",
+                    "department": "dept",
+                    "title": "title",
+                    "role": "role",
+                    "industry": "inds",
+                    "directReport": "direct Report",
+                    "startDate": "Jan 14, 2022",
+                    "email": "email@email"
                 });
-            }
-            this.pDialog.then(function (oDialog) {
-                oDialog.open();
+            console.log('employeeBinding', employeeBinding);
+            console.log('oContext', oContext);
+
+            employeeList.getItems().some(function (oItem) {
+                if (oItem.getBindingContext() === oContext) {
+                    oItem.focus();
+                    oItem.setSelected(true);
+                    return true;
+                }
             });
+            onSave();
         },
-        saveEmployee: function () {
-
-            var oModel = this.getView().getModel("employee");
-            var EmployeesNumber = oModel.getProperty("/Employees").length;
-            
-            var NewEmployeeID = EmployeesNumber;
-            var NewEmployeeFullName = this.getView().byId("fullName").getValue();
-            var NewEmployeeDepartment = this.getView().byId("department").getValue();
-            var NewEmployeeTitle = this.getView().byId("title").getValue();
-            var NewEmployeeRole = this.getView().byId("role").getValue();
-            var NewEmployeeIndustry = this.getView().byId("industries").getValue();
-            var NewEmployeeDirectReport = this.getView().byId("directReport").getValue();
-            var NewEmployeeStartDate = this.getView().byId("startDate").getValue();
-            var NewEmployeeEmail = this.getView().byId("email").getValue();
-
-            var oEmployee = {};
-            oEmployee = {
-                "id": NewEmployeeID,
-                "fullName": NewEmployeeFullName,
-                "department": NewEmployeeDepartment,
-                "title": NewEmployeeTitle,
-                "role": NewEmployeeRole,
-                "industries": NewEmployeeIndustry,
-                "directReport": NewEmployeeDirectReport,
-                "startDate": NewEmployeeStartDate,
-                "email": NewEmployeeEmail,
-                "assignedSkills": []
-            };
-
-            var oEmployees = oModel.getProperty("/Employees");
-            oEmployees.push(oEmployee);
-            oModel.setProperty("/Employees", oEmployees);
-            this.pDialog.then(function (oDialog) {
-                oDialog.close();
+        onSave : function () {
+			this.getView().getModel().submitBatch();
+		},
+      
+        //NAVIGATION 
+        onPress: function (oEvent) {
+            var oItem = oEvent.getSource();
+            var oRouter = this.getOwnerComponent().getRouter();
+            console.log('Click');
+            oRouter.navTo("detail", {
+                employeePath: window.encodeURIComponent((oItem.getBindingContext().getProperty("ID")))
             });
-        },
-        cancelButton: function () {
-            this.byId("addEmployeeDialog").close();
-        },
+        }
 
-        
-//NAVIGATION 
-
-            onPress: function (oEvent) {
-                var oItem = oEvent.getSource();
-                var oRouter = this.getOwnerComponent().getRouter();
-                console.log('Click');
-                oRouter.navTo("detail", {
-                    employeePath: window.encodeURIComponent((oItem.getBindingContext().getProperty("id")))
-                });
-            }
-
-        });
+    });
 });

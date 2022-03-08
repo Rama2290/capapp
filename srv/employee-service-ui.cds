@@ -5,7 +5,7 @@ annotate service.Employees with @(
         {
             $Type : 'UI.DataField',
             Value : name,
-            Label : 'Name',
+            Label : 'name',
             ![@UI.Importance] : #High
 
         },

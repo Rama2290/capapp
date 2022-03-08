@@ -15,7 +15,7 @@
             <Toolbar>
                 <Title text="{i18n>employeeListTitle}"/>
                 <ToolbarSpacer/>      
-                <Button width="150px" icon="sap-icon://add" press="addEmployee" text="Add Employee"/>            
+                <Button width="150px" icon="sap-icon://add" press=".addEmployee" text="Add Employee"/>            
             </Toolbar>
         </headerToolbar>
 
@@ -39,10 +39,29 @@
                 press=".onPress"
                 type="Navigation"> 
                 <cells>
-                    <ObjectIdentifier title="{name}" text="{role}"/>
+                    <!-- <ObjectIdentifier title="{name}" text="{role}"/>
                         <Text text="{department}"/>
                         <Text text="{industry}"/>
-                        <Text text="{startDate}"/>
+                        <Text text="{startDate}"/> -->
+                        <Input
+                            value= "{name}"
+                            liveChange=".onInputChange" />     
+                </cells>
+                <cells>
+                    <Input 
+                            value = "{department}"
+                            liveChange=".onInputChange" />
+
+                </cells>
+                <cells>
+                    <Input 
+                            value = "{industry}"
+                            liveChange=".onInputChange" />
+                </cells>
+                <cells>
+                    <Input 
+                            value = "{startDate}"
+                            liveChange=".onInputChange" />
                 </cells>
             </ColumnListItem>
         </items>
