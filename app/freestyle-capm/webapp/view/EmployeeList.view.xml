@@ -1,6 +1,7 @@
 <mvc:View
    controllerName="freestyle.capm.controller.employeeList"
    xmlns="sap.m"
+   xmlns:f="sap.f"
    xmlns:mvc="sap.ui.core.mvc">
 
     <Table 
@@ -14,7 +15,7 @@
             <Toolbar>
                 <Title text="{i18n>employeeListTitle}"/>
                 <ToolbarSpacer/>      
-                <Button width="150px" id="CreateBtn" icon="sap-icon://add" press="addEmployee" text="Add Employee"/>            
+                <Button width="150px" icon="sap-icon://add" press="addEmployee" text="Add Employee"/>            
             </Toolbar>
         </headerToolbar>
 
