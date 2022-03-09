@@ -1,6 +1,7 @@
 <mvc:View
    controllerName="freestyle.capm.controller.employeeList"
    xmlns="sap.m"
+   xmlns:f="sap.f"
    xmlns:mvc="sap.ui.core.mvc">
 
     <Table 
@@ -14,7 +15,30 @@
             <Toolbar>
                 <Title text="{i18n>employeeListTitle}"/>
                 <ToolbarSpacer/>      
-                <Button width="150px" id="CreateBtn" icon="sap-icon://add" press="addEmployee" text="Add Employee"/>            
+                <Button 
+                    width="150px" 
+                    icon="sap-icon://add" 
+                    press=".onAddEmployee" 
+                    text="Add Employee"/> 
+                <Button
+                    id="saveButton"
+                    type="Emphasized"
+                    text="{i18n>saveButtonText}"
+                    press=".onSave"/>
+                <Button
+                    id="doneButton"
+                    text="{i18n>cancelButtonText}"
+                    press=".onResetChanges"/>   
+                    <!-- <SearchField
+                            id="searchField"
+                            tooltip="{i18n>worklistSearchTooltip}"
+                            search=".onSearch">
+                            <layoutData>
+                                <OverflowToolbarLayoutData
+                                    maxWidth="200px"
+                                    priority="NeverOverflow"/>
+                            </layoutData>
+                        </SearchField>         -->
             </Toolbar>
         </headerToolbar>
 
