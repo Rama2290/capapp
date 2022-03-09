@@ -13,8 +13,7 @@ sap.ui.define([
 		},
 		_onObjectMatched: function (oEvent) {
 			this.getView().bindElement({
-				path: "/Employees/" + window.decodeURIComponent(oEvent.getParameter("arguments").employeePath),
-				model: "employee"
+				path: "/Employees(ID=" + window.decodeURIComponent(oEvent.getParameter("arguments").employeePath)+",IsActiveEntity=true)"
 			});
 		},
 		onNavBack: function () {

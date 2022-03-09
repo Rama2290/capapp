@@ -4,9 +4,7 @@
 	xmlns:f="sap.f"
 	xmlns:card="sap.f.cards"
 	xmlns:layout="sap.ui.layout"
-	xmlns:m="sap.m"
-
-	xmlns:w="sap.ui.integration.widgets"
+xmlns:w="sap.ui.integration.widgets"
 	displayBlock="true"
 	height="100%"
 xmlns:mvc="sap.ui.core.mvc" >
@@ -47,24 +45,29 @@ xmlns:mvc="sap.ui.core.mvc" >
 				title="{name}"
 				backgroundDesign="Solid">
 				<attributes>
-					<ObjectAttribute title="Email" text="{email}" />
-
-					<ObjectAttribute title="Role" text="{role}" />
-					<ObjectAttribute title="Industry" text="{industry}" />
-					<ObjectAttribute title="Direct Report" text="{directReport}" />
-					<ObjectAttribute title="Start Date" text="{startDate}" />
+					<ObjectAttribute title="{email}" />
+					<ObjectAttribute title="{role}"  />
+					<ObjectAttribute title="{industry}"  />
+					<ObjectAttribute title="{directReport}" />
+					<ObjectAttribute title="{startDate}"  />
 
 					
 
 				</attributes>
 			</ObjectHeader>
 
-			<ScrollContainer height="100%" width="100%"	vertical="true">
+		<ScrollContainer height="100%" width="100%"	vertical="true">
 				<f:GridContainer
 					id="grid1"
 					class="sapUiSmallMargin"
 					snapToRow="true"
-					items="{assignedSkills}">
+					items="{
+                    path: 'skills',
+					parameters : {
+							expand : 'skills'
+						}
+					
+                }">
 					<f:layout>
 						<f:GridContainerSettings rowSize="80px" columnSize="80px" gap="18px" />
 					</f:layout>
@@ -74,28 +77,28 @@ xmlns:mvc="sap.ui.core.mvc" >
 
 					<f:items >
 					<GenericTile 
-						header="{skill}" 
-						subheader="{type}">
+						header="{skill/skill}" 
+						subheader="{skill/type}">
 						<layoutData>
 							<f:GridContainerItemLayoutData minRows="2" columns="2" />
 						</layoutData>
 						<TileContent>
 						<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
-							<m:VBox>
-								<m:Label text="Date Acquired"/>
-								<m:Label text="{dateAcquired}"/>
-								<m:Label text="Comfort Level"/>
-								<m:ProgressIndicator 
+							<VBox>
+								<Label text="Date Acquired"/>
+								<Label text="{dateAcquired}"/>
+								<Label text="Comfort Level"/>
+								<ProgressIndicator 
 									percentValue="{comfortLevel}"
 									state="Success"
 									displayValue="{comfortLevel}" />
-							</m:VBox>
+							</VBox>
 						</layout:VerticalLayout>							
 						</TileContent>
 					</GenericTile>
 					</f:items>		
 				</f:GridContainer>
-			</ScrollContainer>
+			</ScrollContainer> 
 		</content>
 	</Page>
 
