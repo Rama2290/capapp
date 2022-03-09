@@ -18,8 +18,8 @@ xmlns:mvc="sap.ui.core.mvc" >
 		navButtonPress=".onNavBack"
 		icon = "sap-icon://add-favorite">
 		<headerContent>
-			<Button id="editEmployeeButton" icon="sap-icon://edit" text="Edit Employee" press="EditEmployee"/>   
-			<Button id="DeleteEmployeeBtn"  icon="sap-icon://delete" text="Delete Employee" press="DeleteEmployee"/>          
+			<Button id="editEmployeeButton" icon="sap-icon://edit" text="Edit Employee" press=".onEditEmployee"/>   
+			<Button id="DeleteEmployeeBtn"  icon="sap-icon://delete" text="Delete Employee" press=".onDeleteEmployee"/>          
 		</headerContent>
 		<content>
 			<ObjectHeader
@@ -48,7 +48,7 @@ xmlns:mvc="sap.ui.core.mvc" >
 				items="{skills}">							
 			<headerToolbar>
 				<Toolbar>
-					<Title text="{i18n>skillTableHeader}"/>
+					<Title text="title"/>
 					<ToolbarSpacer/>      
 						<Button id="skillButton" icon="sap-icon://add-favorite" tooltip="Add Skills" text="Add Employee Skillz" press= "addSkill"/>            
 				</Toolbar>

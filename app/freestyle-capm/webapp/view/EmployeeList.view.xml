@@ -15,7 +15,30 @@
             <Toolbar>
                 <Title text="{i18n>employeeListTitle}"/>
                 <ToolbarSpacer/>      
-                <Button width="150px" icon="sap-icon://add" press=".addEmployee" text="Add Employee"/>            
+                <Button 
+                    width="150px" 
+                    icon="sap-icon://add" 
+                    press=".onAddEmployee" 
+                    text="Add Employee"/> 
+                <Button
+                    id="saveButton"
+                    type="Emphasized"
+                    text="{i18n>saveButtonText}"
+                    press=".onSave"/>
+                <Button
+                    id="doneButton"
+                    text="{i18n>cancelButtonText}"
+                    press=".onResetChanges"/>   
+                    <!-- <SearchField
+                            id="searchField"
+                            tooltip="{i18n>worklistSearchTooltip}"
+                            search=".onSearch">
+                            <layoutData>
+                                <OverflowToolbarLayoutData
+                                    maxWidth="200px"
+                                    priority="NeverOverflow"/>
+                            </layoutData>
+                        </SearchField>         -->
             </Toolbar>
         </headerToolbar>
 
@@ -39,29 +62,10 @@
                 press=".onPress"
                 type="Navigation"> 
                 <cells>
-                    <!-- <ObjectIdentifier title="{name}" text="{role}"/>
+                    <ObjectIdentifier title="{name}" text="{role}"/>
                         <Text text="{department}"/>
                         <Text text="{industry}"/>
-                        <Text text="{startDate}"/> -->
-                        <Input
-                            value= "{name}"
-                            liveChange=".onInputChange" />     
-                </cells>
-                <cells>
-                    <Input 
-                            value = "{department}"
-                            liveChange=".onInputChange" />
-
-                </cells>
-                <cells>
-                    <Input 
-                            value = "{industry}"
-                            liveChange=".onInputChange" />
-                </cells>
-                <cells>
-                    <Input 
-                            value = "{startDate}"
-                            liveChange=".onInputChange" />
+                        <Text text="{startDate}"/>
                 </cells>
             </ColumnListItem>
         </items>

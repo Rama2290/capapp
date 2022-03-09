@@ -29,16 +29,20 @@ sap.ui.define([
 				oRouter.navTo("overview", {}, true);
 			}
 		},
-		EditEmployee: function () {
-			console.log('edit button pressed');
+		onEditEmployee: function (oEvent) {
+			console.log('pressed onEditEmployee');
 		},
-		DeleteEmployee: function () {
+		onCancelEditEmployee: function () {
+			console.log('pressed onCancelEdit Employee');
+		},
+		
+		onDeleteEmployee: function () {
 			console.log('pressed delete employee');
 		},
-		saveEmployeeEdit: function () {
+		onSaveEmployeeEdit: function () {
 			this.byId("editEmployeeDialog").close();
 		},
-		addSkill: function () {
+		onAddSkill: function () {
 			console.log('clicked add Skill');
 		}
 	});

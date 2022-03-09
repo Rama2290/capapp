@@ -8,19 +8,20 @@ sap.ui.define([
     return Controller.extend("freestylecapm.controller.EmployeeList", {
         onInit: function () {
         },
-        addEmployee: function () {
+        onAddEmployee: function () {
             //   console.log('clicked Add Employee')
             var employeeList = this.byId("idEmployeeTable"),
                 employeeBinding = employeeList.getBinding("items"),
                 oContext = employeeBinding.create({
-                    "name": "name",
-                    "department": "dept",
-                    "title": "title",
-                    "role": "role",
-                    "industry": "inds",
-                    "directReport": "direct Report",
-                    "startDate": "Jan 14, 2022",
-                    "email": "email@email"
+                    // "ID": "",
+                    "name": "",
+                    "department": "",
+                    "title": "",
+                    "role": "",
+                    "industry": "",
+                    "directReport": "",
+                    "startDate": "1997-12-12",
+                    "email": ""
                 });
             console.log('employeeBinding', employeeBinding);
             console.log('oContext', oContext);
@@ -32,12 +33,14 @@ sap.ui.define([
                     return true;
                 }
             });
-            onSave();
-        },
+        },  
         onSave : function () {
+            console.log('save clicked...but is it doing anything?', this.getView().getModel());
 			this.getView().getModel().submitBatch();
 		},
-      
+        onResetChanges : function () {
+            console.log('reset Changes To be created still');
+        },
         //NAVIGATION 
         onPress: function (oEvent) {
             var oItem = oEvent.getSource();
@@ -47,6 +50,5 @@ sap.ui.define([
                 employeePath: window.encodeURIComponent((oItem.getBindingContext().getProperty("ID")))
             });
         }
-
     });
 });
