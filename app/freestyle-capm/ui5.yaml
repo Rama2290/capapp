@@ -7,10 +7,11 @@ server:
   - name: fiori-tools-proxy
     afterMiddleware: compression
     configuration:
-      ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+      ignoreCertError: false
+       # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
       backend:
-      - path: /service
-        url: http://localhost:4004
+      - path: /sap
+        url: https://s4hana2020.mindsetconsulting.com:44301
       ui5:
         path: 
         - /resources

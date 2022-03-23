@@ -11,7 +11,7 @@
     "description": "{{appDescription}}",
     "dataSources": {
       "mainService": {
-        "uri": "/service/employee/",
+        "uri": "/sap/opu/odata4/sapzui_c_employee_m_001/srvd/sap/zui_c_employee_m_001/0001/",
         "type": "OData",
         "settings": {
           "annotations": [],
