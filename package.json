@@ -14,8 +14,9 @@
     "sqlite3": "^5.0.2"
   },
   "scripts": {
-    "start": "cds run",
+    "start": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#freestyle-capm-tile\"",
     "watch-employees": "cds watch --open employees/webapp/index.html#fe-lrop-v4",
+    "start-noflp": "fiori run --open \"index.html?sap-ui-xx-viewCache=false\"",
     "watch-capm-freestyle": "cds watch --open capm-freestyle/webapp/index.html#fe-lrop-v4",
     "watch-test2": "cds watch --open test2/webapp/index.html#fe-lrop-v4",
     "watch-freestyle-capm": "cds watch --open freestyle-capm/webapp/index.html#fe-lrop-v4",

@@ -11,5 +11,8 @@
     "scripts": {
         "deploy-config": "npx -p @sap/ux-ui5-tooling fiori add deploy-config cf"
     },
-    "devDependencies": { }
+    "dependencies": {
+        "@sap/ux-ui5-tooling": "^1.5.2",
+        "cors-anywhere": "^0.4.4"
+    }
 }
